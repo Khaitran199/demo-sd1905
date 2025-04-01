@@ -1,0 +1,135 @@
+body{
+    padding: 0px; /*tạo khoảng cách giữa nội dung bên trong phần tử và viền (border) của nó.*/
+    margin: 0px; /*tạo khoảng cách bên ngoài phần tử*/
+    }
+    .container{
+    max-width:1000px; 
+    margin:0 auto; /* Căn giữa */
+    }
+    .container>header{
+    background-image: url('/images/SinhVienFPT.jpg'); 
+    background-size:100% 100%; 
+    height:0px; 
+    padding-bottom:25%; /*tạo khoảng cách giữa nội dung của phần tử và viền dưới (bottom border)*/
+    } 
+    .menu>ul>li{
+        display:inline-block;
+        position:relative;
+     }
+    
+    .menu>ul>li>a{
+        display:block;
+    }
+    .menu ul ul{
+    position:absolute; 
+    display:none;
+    padding:0px;
+    margin:0px;
+    list-style:none; 
+    border-radius:3px; 
+    width:200px;
+    background-color:white; 
+    box-shadow:0 0 1px gray;  
+    }
+    .menu ul ul a{
+        display:block; 
+        line-height:30px; 
+    color:orangered; 
+    text-decoration:none; 
+    font-variant:small-caps; 
+    font-size:larger; 
+    padding:0 10px;
+    }
+    .menu ul ul a:hover{
+        background-color:orangered; 
+    color:white;
+    }
+    .menu>ul{
+    padding:0px; 
+    margin:0px; 
+    list-style:none; 
+    border-radius:3px;      
+    background-color:orangered; 
+    text-align: center;
+    }
+    .menu>ul>li:hover>ul{
+        display:block;
+    } 
+    
+    .menu>ul>li>a{
+    text-decoration:none; 
+    font-variant:small-caps; 
+    font-size:larger; 
+    color:white;
+    padding:0 10px; 
+    line-height:40px; 
+    }  
+    .menu>ul>li>a:hover{
+        color:yellow;
+    }
+
+    .container>article{
+        min-height:400px; 
+        width:75%; 
+        background-color:white; 
+        float:left; 
+        } 
+        .container>aside{
+        min-height:400px; 
+        width:25%;  
+        float:right; 
+        }
+    .container>footer{
+        border-top:5px double orangered; 
+        line-height:50px; 
+        background-color:lightcyan; 
+        text-align:center; 
+        font-variant:small-caps; 
+        clear:both; /*ngăn phần tử bị đẩy lên bên cạnh phần tử có float*/
+        }
+
+    iframe[name=page]{
+        width: 100%;
+        min-height: 400px;
+    }
+    
+    .vmenu{
+        padding:0;
+        margin:5px;
+        list-style:none;
+        border-radius:3px;
+        box-shadow:0 0 2px gray;
+        left: 0;
+        } 
+    
+    .vmenu a{
+    background: url('/images/bullet_hover.gif') no-repeat 0 center;
+    display: block;
+    border-bottom: 1px dotted orangered;
+    color: orangered;
+    font-variant: small-caps; 
+    font-size: larger;
+    text-decoration:none;
+    padding: 8px 5px 8px 30px;
+    margin: 0; 
+    } 
+    
+    .vmenu a:hover{
+    background: url('/images/muiten.jpg') no-repeat 0 center; 
+    border-bottom: 1px dotted white; 
+    background-color: orangered; 
+    color: white; 
+    font-weight: bold;
+    } 
+    .bx1 {
+        position: absolute;
+        top: 25%; /* Đưa chữ xuống khoảng 20% chiều cao của header */
+        left: 13%; /* Đẩy chữ vào khoảng 5% từ lề trái */
+        font-family: Impact, sans-serif;
+        font-size: 60px;
+        color: white;
+        text-shadow: 3px 3px 10px red;
+        font-weight: bold;
+        text-transform: uppercase; /* Viết hoa toàn bộ chữ */
+}
+    
