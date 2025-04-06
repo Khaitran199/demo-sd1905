@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang Video</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+    }
+    iframe {
+      width: 600px;
+      height: 400px;
+      border: 2px solid olive;
+    }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+    .thumbnail {
+      width: 150px;
+      height: 120px;
+      margin-bottom: 10px;
+      display: block;
+      text-align: center;
+      line-height: 120px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .thumb1 { background: orange; }
+    .thumb2 { background: teal; }
+    .thumb3 { background: mediumpurple; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <iframe src="223461_tiny.mp4" name="videoframe"></iframe>
+    <div class="sidebar">
+        <a href="vd1.html" target="videoframe">
+            <img src="/asm1/korean.jpg" alt="Ảnh 1" class="thumbnail">
+          </a>
+          <a href="vd2.html" target="videoframe">
+            <img src="/asm1/japan.jpg" alt="Ảnh 2" class="thumbnail">
+          </a>
+          <a href="vd3.html" target="videoframe">
+            <img src="/asm1/australlia.jpg" alt="Ảnh 3" class="thumbnail">
+          </a>
+    </div>
+  </div>
+</body>
+</html>

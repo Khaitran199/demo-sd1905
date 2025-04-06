@@ -12,6 +12,8 @@ body {
     background-color: #f5f7fa;
     text-align: center;
     height: 100%;
+    margin: 0;
+    font-family: sans-serif;
 }
 .container {
     display: flex;
@@ -111,3 +113,86 @@ article, iframe {
 .pink { color: #d63384; }
 .cyan { color: #17a2b8; }
 .green { color: #60c9b1; }
+
+/* Container full width */
+.slider-container {
+    position: relative;
+    width: 100vw;
+    height: 500px; /* hoặc 100vh nếu muốn full chiều cao luôn */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 300%; /* 3 slide */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100vw;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#s1:checked ~ .slider-container .slides {
+    transform: translateX(0%);
+}
+#s2:checked ~ .slider-container .slides {
+    transform: translateX(-100vw);
+}
+#s3:checked ~ .slider-container .slides {
+    transform: translateX(-200vw);
+}
+
+/* Nút điều hướng */
+.nav-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.nav-dots label {
+    width: 14px;
+    height: 14px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#s1:checked ~ .slider-container .nav-dots label[for="s1"],
+#s2:checked ~ .slider-container .nav-dots label[for="s2"],
+#s3:checked ~ .slider-container .nav-dots label[for="s3"] {
+    background: red;
+    transform: scale(1.3);
+}
+
+/* 🌀 Animation */
+@keyframes slideAnimation {
+    0%   { transform: translateX(0); }
+    33.33% { transform: translateX(0); }
+
+    33.34% { transform: translateX(-100vw); }
+    66.66% { transform: translateX(-100vw); }
+
+    66.67% { transform: translateX(-200vw); }
+    99.99% { transform: translateX(-200vw); }
+
+    100%  { transform: translateX(0); }
+}

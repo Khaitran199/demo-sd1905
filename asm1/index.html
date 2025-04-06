@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khám Phá Việt Nam</title>
 </head>
-<div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v22.0"></script>
-    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="" data-numposts="5"></div>
 <link rel="stylesheet" href="asm1.css">
 <body>
     <div class="container">
@@ -20,17 +17,41 @@
             <div class="dropdown">
                 <a href="#">≡</a>
                 <div class="dropdown-content">
-                    <a href="#">Đăng nhập</a>
-                    <a href="#">Đăng kí</a>
-                    <a href="#">Đăng xuất</a>
+                    <a href="login.html">Đăng nhập</a>
+                    <a href="signing.html">Đăng kí</a>
+                    <a href="index.html">Đăng xuất</a>
                 </div>
             </div>
         </div>
     </div>
-    <hr>    
-    <div class="additional-image" style="text-align: center; padding: 20px;">
-<img src="Tourist (10).png" alt="Additional Image" style="max-width: 80%; height: auto;">
+    <hr> 
+    <!-- Input điều khiển -->
+<input type="radio" name="slider" id="s1" checked>
+<input type="radio" name="slider" id="s2">
+<input type="radio" name="slider" id="s3">
+
+<!-- Slider full width -->
+<div class="slider-container">
+  <div class="slides">
+    <div class="slide">
+      <img src="/asm1/Tourist (10).png" alt="Slide 1">
     </div>
+    <div class="slide">
+      <img src="/asm1/Italy.jpg" alt="Slide 2">
+    </div>
+    <div class="slide">
+      <img src="/asm1/australlia.jpg" alt="Slide 3">
+    </div>
+  </div>
+
+  <!-- Nút chấm tròn -->
+  <div class="nav-dots">
+    <label for="s1"></label>
+    <label for="s2"></label>
+    <label for="s3"></label>
+  </div>
+</div>
+<hr>
     <div class="menu-container">
         <a href="#" class="menu-item black">
             <div class="menu-icon"><img src="/asm1/1.png" alt=""></div>
@@ -59,5 +80,39 @@
     <footer>
         Du lịch đi bạn © 2025. All rights reserved.
     </footer>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v22.0"></script>
+    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="" data-numposts="5"></div>
+
+    <!-- JavaScript cho slideshow -->
+    <script>
+      let current = 1;
+  const totalSlides = 3;         // Số lượng slide
+      const intervalTime = 6000;    // 10 giây
+      let interval;
+    
+      function startAutoSlide() {
+        interval = setInterval(() => {
+          current = current % totalSlides + 1;
+          document.getElementById(`s${current}`).checked = true;
+        }, intervalTime);
+      }
+    
+      function resetAutoSlide() {
+        clearInterval(interval);
+        startAutoSlide();
+      }
+    
+      // Nếu người dùng bấm chấm tròn, reset lại auto slide
+      document.querySelectorAll('input[name="slider"]').forEach((radio) => {
+        radio.addEventListener('change', () => {
+          current = parseInt(radio.id.replace('s', ''));
+          resetAutoSlide();
+        });
+      });
+    
+      // Bắt đầu tự chạy khi trang được load
+      startAutoSlide();
+    </script>
 </body>
 </html>
